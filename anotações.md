@@ -44,7 +44,7 @@ Para rodar a aplicação angular, dentro do diretório do projeto, use o comando
 ```bash
 ng serve
 ```
-
+https://github.com/pcmoraesmenezes/angular-project.git
 A página padrão pode ser encontrada em `angular.json` dentro de `index:`, por padrão é `src/index.html`.
 
 Quando alterações são feitas é necessário reiniciar o servidor, para isso use `ctrl + c` e depois `ng serve` novamente.
@@ -72,4 +72,23 @@ Components = Componentes especificos em geral.
 ---
 
 Componentes são partes especificas do projeto.
+
+Para criar um modulo use o comando `ng generate module` seguido do nome do modulo.
+
+```bash
+
+ng generate module nome-do-modulo
+```
+
+Então relembrando sobre padrões de projeto é aconselhavél remover o resultado e coloca-lo no mesmo nível que `app`.
+
+O module vai indicar o que vai ser declarado e importado.
+
+Tudo que for ser importado deve estar em `app.modules.ts @NgModule({imports: []})`.
+
+Lifecycle hooks:
+
+- Lifecycle é o ciclo de vida do angular.
+
+- O hook é a função executada em cada ciclo de vida
 
