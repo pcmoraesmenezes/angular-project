@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    img {
+        max-width: 50px;
+        border-radius: 30px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .trademark {
+        font-style: italic;
+    }
+    .contacts {
+        transition: transform 100ms ease-in-out;
+        padding: 10px 10px 10px 10px;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
