@@ -1,26 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MainService } from '../../services/services';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.less'
 })
-export class FooterComponent implements OnInit{
-
+export class FooterComponent{
+  constructor(private mainService: MainService) { }
   contact = 
     {
       email: 'paulo@email.com',
       photo: ''
     }
 
-
-  constructor(private http: HttpClient) { }
-
-   ngOnInit() {
-    this.http.get('https://jsonplaceholder.typicode.com/photos')
-    .subscribe((response:any) => {
-      this.contact.photo = response[0].url;
-    })
-}
+  ngOnInit() {
+    this.mainService.get_photo();
 }
