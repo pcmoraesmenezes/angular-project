@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { MainService } from '../../services/services';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.less'
+  styleUrl: './footer.component.less',
 })
-export class FooterComponent{
-  constructor(private mainService: MainService) { }
-  contact = 
-    {
-      email: 'paulo@email.com',
-      photo: ''
-    }
+export class FooterComponent {
+  @Input() photo: any;
+
+  contact: { email: string; photo: string } = {
+    email: '',
+    photo: '',
+  };
 
   ngOnInit() {
-    this.mainService.get_photo();
+    console.log(this.photo);
+    this.contact.photo = this.photo;
+  }
 }
